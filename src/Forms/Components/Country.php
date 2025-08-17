@@ -17,6 +17,13 @@ class Country extends Select
 
     protected array | Arrayable | string | Closure | null $mapped = null;
 
+    protected function setUp(): void
+    {
+        parent::setUp();
+
+        $this->options($this->getOptions());
+    }
+
     public function getOptions(): array
     {
         $options = $this->evaluate($this->options) ?? [];
